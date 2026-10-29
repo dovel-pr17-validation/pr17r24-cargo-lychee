@@ -19,7 +19,7 @@ lychee-lib = { path = "../lychee-lib", version = "0.24.2", default-features = fa
 
 anyhow = "1.0.102"
 assert-json-diff = "2.0.2"
-clap = { version = "4.6.1", features = ["env", "derive", "cargo", "string"] }
+clap = { version = "4.6.7", features = ["env", "derive", "cargo", "string"] }
 clap_complete = "4.6.5"
 clap_mangen = "0.3.0"
 console = "0.16.3"
