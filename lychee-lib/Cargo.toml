@@ -15,7 +15,7 @@ rust-version = "1.89.0"
 [dependencies]
 rate-limits = "0.7.0"
 async-stream = "0.3.6"
-async-trait = "0.1.88"
+async-trait = "0.1.92"
 cookie_store = "0.22.1"
 dashmap = { version = "6.2.1" }
 email_address = "0.2.9"
