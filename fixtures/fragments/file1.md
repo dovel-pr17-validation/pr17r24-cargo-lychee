@@ -1,0 +1,225 @@
+# Fragment Test File 1
+
+This is a test file for the fragment loader.
+
+## Fragment 1
+
+[Link to fragment 2](#fragment-2)
+
+## Fragment 2
+
+[Link to fragment 1 in file2](file2.md#fragment-1)
+
+## Fragment 3
+
+[Link to missing fragment](#missing-fragment)
+
+[Link to missing fragment in file2](file2.md#missing-fragment)
+
+### `Code` ``Heading
+
+[Link to code heading](#code-heading)
+
+## HTML Fragments
+
+Explicit fragment links are also supported.
+
+<a id="explicit-fragment"></a>
+
+[Link to explicit fragment](#explicit-fragment)
+
+[To the HTML doc](file.html#a-word)
+
+## Custom Fragments
+
+[Custom fragment id in file2](file2.md#custom-id)
+
+{#block-heading-id}
+## Block Heading Attribute
+
+[Link to block heading attribute](#block-heading-id)
+
+`{#code-attribute-id}`
+## Literal Code Attribute
+
+[Link to nonexistent code attribute](#code-attribute-id)
+[Link to heading after code attribute](#literal-code-attribute)
+
+\{#escaped-attribute-id}
+## Escaped Attribute
+
+[Link to nonexistent escaped attribute](#escaped-attribute-id)
+[Link to heading after escaped attribute](#escaped-attribute)
+
+{#setext-h1-id}
+Setext Level One
+===============
+
+[Link to Setext H1 attribute](#setext-h1-id)
+[Link to generated Setext H1 fragment](#setext-level-one)
+
+{#setext-h2-id}
+Setext Level Two
+---------------
+
+[Link to Setext H2 attribute](#setext-h2-id)
+[Link to generated Setext H2 fragment](#setext-level-two)
+
+{ #review-spaces }
+# Review Spaces Heading
+
+[Link to spaced review attribute](#review-spaces)
+
+{#review-blank-line}
+
+## Review Blank Line Heading
+
+[Link to review attribute before blank line](#review-blank-line)
+
+> {#review-quote}
+> ## Review Quote
+
+[Link to quoted review attribute](#review-quote)
+
+a {#review-text-before}
+## Review Text Before Heading
+
+[Link to nonexistent review text-before attribute](#review-text-before)
+[Link to heading after review text-before attribute](#review-text-before-heading)
+
+{#review-text-after} a
+## Review Text After Heading
+
+[Link to nonexistent review text-after attribute](#review-text-after)
+[Link to heading after review text-after attribute](#review-text-after-heading)
+
+a
+{#review-line-before}
+## Review Line Before Heading
+
+[Link to nonexistent review line-before attribute](#review-line-before)
+[Link to heading after review line-before attribute](#review-line-before-heading)
+
+```
+{#review-code-block}
+```
+## Review Code Block Heading
+
+[Link to nonexistent review code-block attribute](#review-code-block)
+[Link to heading after review code-block attribute](#review-code-block-heading)
+
+*{#review-emphasis}*
+## Review Emphasis Heading
+
+[Link to nonexistent review emphasis attribute](#review-emphasis)
+[Link to heading after review emphasis attribute](#review-emphasis-heading)
+
+{#review-multiple-first} {#review-multiple-second}
+## Review Multiple Groups Heading
+
+[Link to first review multiple-group attribute](#review-multiple-first)
+[Link to nonexistent second review multiple-group attribute](#review-multiple-second)
+[Link to heading after review multiple-group attributes](#review-multiple-groups-heading)
+
+{} #review-between-empty {}
+## Review Between Empty Heading
+
+[Link to nonexistent review between-empty attribute](#review-between-empty)
+[Link to heading after review between-empty attribute](#review-between-empty-heading)
+
+{{ #review-double-spaced }}
+## Review Double Spaced Heading
+
+[Link to nonexistent review double-spaced attribute](#review-double-spaced)
+[Link to heading after review double-spaced attribute](#review-double-spaced-heading)
+
+{{#review-double-tight}}
+## Review Double Tight Heading
+
+[Link to nonexistent review double-tight attribute](#review-double-tight)
+[Link to heading after review double-tight attribute](#review-double-tight-heading)
+
+{
+#review-across-lines
+}
+## Review Across Lines Heading
+
+[Link to nonexistent review across-lines attribute](#review-across-lines)
+[Link to heading after review across-lines attribute](#review-across-lines-heading)
+
+# Kebab Case Fragment
+
+[Link to kebab-case fragment](#kebab-case-fragment)
+
+[Link to second kebab-case fragment](#kebab-case-fragment-1)
+
+# Kebab Case Fragment
+
+[Link to another file type](empty_file#fragment)
+
+# Ignore casing
+
+[Link with wrong casing](#IGNORE-CASING)
+
+# Fünf süße Äpfel
+
+[Link to umlauts](#fünf-süße-äpfel)
+[Link to umlauts wrong case](#fünf-sÜße-Äpfel)
+[Link to umlauts with percent encoding](#f%C3%BCnf-s%C3%BC%C3%9Fe-%C3%A4pfel)
+
+# To top fragments
+
+The empty "#" and "#top" fragments are always valid
+without related HTML element. Browser will scroll to the top of the page.
+
+[Link to top of file2](file2.md#)
+[Alternative link to top of file2](file2.md#top)
+
+##### Lets wear a hat: être
+
+A link to the non-existing fragment: [try](https://github.com/lycheeverse/lychee#non-existent-anchor).
+
+
+# Sub directory
+
+- Link to a sub directory
+  - Good: [With trailing slash](sub_dir/)
+  - Good: [Without trailing slash](sub_dir)
+- Link to a fragment to index.html in sub directory
+  - Good: [With trailing slash](sub_dir/#a-link-inside-index-html-inside-sub-dir)
+  - Good: [Without trailing slash](sub_dir#a-link-inside-index-html-inside-sub-dir)
+- Link to a non-existing fragment in a sub directory
+  - Bad: [With trailing slash](sub_dir/#non-existing-fragment-1)
+  - Bad: [Without trailing slash](sub_dir#non-existing-fragment-2)
+- Link to a non-existing sub directory
+  - Bad: [With trailing slash](sub_dir_non_existing_1/)
+  - Bad: [Without trailing slash](sub_dir_non_existing_2)
+- Link to a empty directory
+  - Good: [With trailing slash](empty_dir/)
+  - Good: [Without trailing slash](empty_dir)
+- Link to a fragment in a non-existing sub directory
+  - Bad: [With trailing slash](empty_dir/#non-existing-fragment-3)
+  - Bad: [Without trailing slash](empty_dir#non-existing-fragment-4)
+
+# Binary data URLs checks
+
+Fragment checking tries to scan the (whole) content/response body for HTML element IDs.
+This fails for binary data and can cause unnecessary traffic for remote URLs.
+
+## Without fragment
+
+Fragment checking is skipped if the URL does not actually contain a fragment.
+Even with fragment checking enabled, the following links must hence succeed:
+
+[Link to local binary file without fragment](zero.bin)
+[Link to local binary file with empty fragment](zero.bin#)
+[Link to remote binary file without fragment](https://raw.githubusercontent.com/lycheeverse/lychee/master/fixtures/fragments/zero.bin)
+[Link to remote binary file with empty fragment](https://raw.githubusercontent.com/lycheeverse/lychee/master/fixtures/fragments/zero.bin#)
+
+## With fragment
+
+Fragment checking is skipped if the Content-Type header is not "text/html", "text/markdown", or "text/plain" with ".md" URL path ending.
+Hence, despite containing fragments which cannot be checked in binary files, the following links are expected to succeed with a HTTP 200 status:
+
+[Link to local binary file with fragment](zero.bin#fragment)
+[Link to remote binary file with fragment](https://raw.githubusercontent.com/lycheeverse/lychee/master/fixtures/fragments/zero.bin#fragment)
